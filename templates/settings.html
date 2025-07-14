@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="header">
+        <div class="back-link">
+            <a href="{{ url_for('index') }}">← Назад</a>
+        </div>
+    </div>
+    <div class="content">
+        <h2>Настройки сайта</h2>
+        <form method="POST">
+            <label for="new_text">Новая надпись:</label><br>
+            <textarea id="new_text" name="new_text" rows="4" cols="50">{{ current_text }}</textarea><br><br>
+            
+            <button type="submit">Сохранить надпись</button>
+        </form>
+        <hr>
+        <form method="POST">
+            <button type="submit" name="reset_visits" value="true" class="reset-button">Сбросить счетчик посещений</button>
+        </form>
+    </div>
+</body>
+</html>
